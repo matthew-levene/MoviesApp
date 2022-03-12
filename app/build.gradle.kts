@@ -3,6 +3,8 @@ import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
 plugins {
     id("com.android.application") version "7.1.2"
     kotlin("android") version "1.6.10"
+    kotlin("plugin.serialization") version "1.6.10"
+    kotlin("kapt") version "1.6.10"
 }
 
 android {
@@ -31,6 +33,10 @@ android {
 }
 
 dependencies {
+
+    //UI
+    implementation("com.github.bumptech.glide:glide:4.13.0")
+    kapt("com.github.bumptech.glide:compiler:4.13.0")
     implementation("androidx.core:core-ktx:1.7.0")
     implementation("androidx.appcompat:appcompat:1.4.1")
 
@@ -45,15 +51,18 @@ dependencies {
 
     val roomVersion = "2.4.2"
     implementation("androidx.room:room-runtime:$roomVersion")
-    annotationProcessor("androidx.room:room-compiler:$roomVersion")
+    kapt("androidx.room:room-compiler:$roomVersion")
+    implementation("androidx.room:room-ktx:$roomVersion")
 
     //Networking
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.okhttp3:okhttp:4.9.3")
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
+    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0")
 
     //DI
-    implementation("io.insert-koin:koin-test:3.1.5")
+    implementation("io.insert-koin:koin-core:3.1.5")
     implementation("io.insert-koin:koin-androidx-workmanager:3.1.5")
 
     //Testing

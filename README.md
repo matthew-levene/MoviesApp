@@ -8,7 +8,7 @@ A simple android app that allows a user to search for a movie from https://movie
 - Mockk Unit Testing
 
 # Suggested Improvements
-- Add a second fragment to app, so that the user can click on RecyclerView items and see move information about the movie
+- Add a second fragment to app, so that the user can click on RecyclerView items and see more information about the movie
 - Provide better error handling for movies that do not have a cover poster.
 
 
